@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to My Page
 
-You can use the [editor on GitHub](https://github.com/yang2lalang/yang2lalang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can view the full [site](https://yang2lalang.github.io/) 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
