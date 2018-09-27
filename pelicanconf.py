@@ -31,10 +31,10 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
-LINKS = (('Home', 'https://yang2lalang.com'),('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'),)
+LINKS = (('Home', 'http://yang2lalang.com'),('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'),)
 
 
-SOCIAL = (('linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
+SOCIAL = (('linkedin', 'http://www.linkedin.com/in/franklinokoli/'),
 	  ('github', 'https://github.com/yang2lalang'),)
 
 MENUITEMS = (('Archives', '/archives.html'),
