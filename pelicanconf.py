@@ -4,9 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'http://localhost:8000'
-RELATIVE_URLS = True
-RELATIVE_SITEURL = '' if RELATIVE_URLS else SITEURL
+SITEURL = 'https://yang2lalang.github.io'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR

@@ -4,70 +4,70 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://localhost:8000/</loc>
-<lastmod>2018-09-27T17:03:32-00:00</lastmod>
+<loc>https://yang2lalang.github.io/</loc>
+<lastmod>2018-09-27T17:09:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/archives.html</loc>
-<lastmod>2018-09-27T17:03:32-00:00</lastmod>
+<loc>https://yang2lalang.github.io/archives.html</loc>
+<lastmod>2018-09-27T17:09:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tags.html</loc>
-<lastmod>2018-09-27T17:03:32-00:00</lastmod>
+<loc>https://yang2lalang.github.io/tags.html</loc>
+<lastmod>2018-09-27T17:09:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/categories.html</loc>
-<lastmod>2018-09-27T17:03:32-00:00</lastmod>
+<loc>https://yang2lalang.github.io/categories.html</loc>
+<lastmod>2018-09-27T17:09:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/how-to-get-trading-view-alerts-by-sms-for-free.html</loc>
+<loc>https://yang2lalang.github.io/how-to-get-trading-view-alerts-by-sms-for-free.html</loc>
 <lastmod>2018-09-17T12:19:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/category/trading.html</loc>
+<loc>https://yang2lalang.github.io/category/trading.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/tradingview.html</loc>
+<loc>https://yang2lalang.github.io/tag/tradingview.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/sms.html</loc>
+<loc>https://yang2lalang.github.io/tag/gmail.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/tag/gmail.html</loc>
+<loc>https://yang2lalang.github.io/tag/sms.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/author/franklin-okoli.html</loc>
+<loc>https://yang2lalang.github.io/author/franklin-okoli.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
