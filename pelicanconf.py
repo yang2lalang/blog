@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Franklin'
+AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
 SITEURL = 'https://yang2lalang.github.io'
 SITETITLE = AUTHOR
@@ -60,7 +60,7 @@ DEFAULT_PAGINATION = 10
 
 MARKUP = ('md', 'ipynb')
 STATIC_PATHS = ['images']
-PLUGIN_PATH = './plugins/pelican-plugins'
+PLUGIN_PATH = './pelican-plugins'
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
 THEME = './themes/Flex'

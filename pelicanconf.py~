@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Franklin'
+AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
 SITEURL = 'https://yang2lalang.github.io'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
-SITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
+SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR
 PATH = 'content'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
@@ -60,7 +60,7 @@ DEFAULT_PAGINATION = 10
 
 MARKUP = ('md', 'ipynb')
 STATIC_PATHS = ['images']
-PLUGIN_PATH = './plugins/pelican-plugins'
+PLUGIN_PATH = './pelican-plugins'
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
 THEME = './themes/Flex'
