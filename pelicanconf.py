@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Franklin'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'https://yang2lalang.github.io'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
@@ -35,11 +35,11 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
-LINKS = (('Portfolio', 'http://yang2lalang.github.io'),)
+LINKS = (('Home', 'https://yang2lalang.github.io'),)
 
-SOCIAL = (('linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
-          ('github', 'https://github.com/yang2lalang'),
-          ('researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
+SOCIAL = (('Linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
+          ('Github', 'https://github.com/yang2lalang'),
+          ('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
@@ -92,7 +92,7 @@ EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
 }
 
-CUSTOM_CSS = 'static/custom.css'
+#CUSTOM_CSS = 'static/custom.css'
 
 USE_LESS = True
 

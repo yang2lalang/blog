@@ -35,11 +35,11 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
-LINKS = (('Portfolio', 'http://yang2lalang.github.o'),)
+LINKS = (('Home', 'http://yang2lalang.github.io'),)
 
-SOCIAL = (('linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
-          ('github', 'https://github.com/yang2lalang'),
-          ('researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
+SOCIAL = (('Linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
+          ('Github', 'https://github.com/yang2lalang'),
+          ('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
@@ -83,15 +83,8 @@ SITEMAP = {
     }
 }
 
-DISQUS_SITENAME = "alexandrevicenziblog"
-ADD_THIS_ID = 'ra-55adbb025d4f7e55'
-
-STATUSCAKE = {
-    'trackid': 'SL0UAgrsYP',
-    'days': 7,
-    'rumid': 6852,
-    'design': 6,
-}
+DISQUS_SITENAME = "http-yang2lalang-github-io"
+ADD_THIS_ID = 'ra-5bac97e477d3d598'
 
 STATIC_PATHS = ['images', 'extra']
 
@@ -99,12 +92,12 @@ EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
 }
 
-CUSTOM_CSS = 'static/custom.css'
+#CUSTOM_CSS = 'static/custom.css'
 
 USE_LESS = True
 
 GOOGLE_ADSENSE = {
-    'ca_id': 'ca-pub-6625957038449899',
+    'ca_id': 'ca-pub-9421131783612830',
     'page_level_ads': True,
     'ads': {
         'aside': '5340595560',
