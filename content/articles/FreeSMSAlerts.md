@@ -2,8 +2,7 @@ Title: How to get Trading view Alerts by sms for free
 Date: 2018-09-17 12:19
 Modified: 2018-09-17 12:19
 Category: Trading
-Tags: Trading view, sms, gmail, google scripts, Free mobile fr
-Slug: how-to-get-trading-view-alert-by-sms-for-free
+Tags: Tradingview, sms, gmail
 
 ## **Introduction**
 

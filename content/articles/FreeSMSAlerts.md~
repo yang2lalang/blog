@@ -2,8 +2,7 @@ Title: How to get Trading view Alerts by sms for free
 Date: 2018-09-17 12:19
 Modified: 2018-09-17 12:19
 Category: Trading
-Tags: Trading view, sms, gmail, google scripts, Free mobile fr
-Slug: how-to-get-trading-view-alert-by-sms-for-free
+Tags: Trading view, sms, gmail
 
 ## **Introduction**
 
@@ -41,7 +40,7 @@ In gmail click **Settings** > **Filters and Blocked Addresses** > **Create a new
 
 In the **From** field of the form we are presentrd, we write the [email address used by Trading view](noreply@tradingview.com) to send us alerts. This email might change from time to time just look at the sender email and include it in this field to identify the sender and click  **Create filter with this search** at the bottom right of this form.
 
-From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice.
+From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice. Select the check box **Forward it** and here select the forwarding address previously created.
 
 ![Create a label in gmail]({filename}/images/labeltradingview.png){.img-center}
 

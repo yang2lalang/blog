@@ -4,10 +4,13 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'https://yang2lalang.github.io'
+SITEURL = 'http://localhost:8000'
+RELATIVE_URLS = True
+RELATIVE_SITEURL = '' if RELATIVE_URLS else SITEURL
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR
+SITELOGO = './images/cartoon_ik.png'
 PATH = 'content'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
@@ -37,9 +40,10 @@ HOME_HIDE_TAGS = True
 
 LINKS = (('Home', 'https://yang2lalang.github.io'),)
 
-GITHUB_URL =  'https://github.com/yang2lalang'
+
 
 SOCIAL = (('Linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
+	  ('Github', 'https://github.com/yang2lalang'),
           ('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
 
 MENUITEMS = (('Archives', '/archives.html'),
@@ -57,7 +61,7 @@ COPYRIGHT_YEAR = 2018
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+#
 
 MARKUP = ('md', 'ipynb')
 STATIC_PATHS = ['images']
