@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yang2lalang.github.io/</loc>
-<lastmod>2018-09-27T13:29:37-00:00</lastmod>
+<lastmod>2018-09-27T13:34:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>https://yang2lalang.github.io/archives.html</loc>
-<lastmod>2018-09-27T13:29:37-00:00</lastmod>
+<lastmod>2018-09-27T13:34:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>https://yang2lalang.github.io/tags.html</loc>
-<lastmod>2018-09-27T13:29:37-00:00</lastmod>
+<lastmod>2018-09-27T13:34:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>https://yang2lalang.github.io/categories.html</loc>
-<lastmod>2018-09-27T13:29:37-00:00</lastmod>
+<lastmod>2018-09-27T13:34:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -46,21 +46,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://yang2lalang.github.io/tag/sms.html</loc>
-<lastmod>2018-09-17T12:19:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
 <loc>https://yang2lalang.github.io/tag/free-mobile-fr.html</loc>
-<lastmod>2018-09-17T12:19:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
-<loc>https://yang2lalang.github.io/tag/google-scripts.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
@@ -75,6 +61,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yang2lalang.github.io/tag/gmail.html</loc>
+<lastmod>2018-09-17T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://yang2lalang.github.io/tag/sms.html</loc>
+<lastmod>2018-09-17T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://yang2lalang.github.io/tag/google-scripts.html</loc>
 <lastmod>2018-09-17T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
