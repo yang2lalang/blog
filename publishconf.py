@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://yang2lalang.github.io'
+SITEURL = 'https://yang2lalang.com'
 RELATIVE_URLS = False
 USE_LESS = False
 DELETE_OUTPUT_DIRECTORY = True
