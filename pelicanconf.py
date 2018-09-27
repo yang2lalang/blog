@@ -37,8 +37,9 @@ HOME_HIDE_TAGS = True
 
 LINKS = (('Home', 'https://yang2lalang.github.io'),)
 
+GITHUB_URL =  'https://github.com/yang2lalang'
+
 SOCIAL = (('Linkedin', 'https://www.linkedin.com/in/franklinokoli/'),
-          ('Github', 'https://github.com/yang2lalang'),
           ('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'))
 
 MENUITEMS = (('Archives', '/archives.html'),
@@ -92,7 +93,7 @@ EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
 }
 
-#CUSTOM_CSS = 'static/custom.css'
+CUSTOM_CSS = 'static/custom.css'
 
 USE_LESS = True
 
