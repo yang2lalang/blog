@@ -88,6 +88,7 @@ def publish():
     )
     local('echo yang2lalang.github.io > {deploy_path}/CNAME'.format(**env))
     local("echo $'User-agent: *\nSitemap: https://yang2lalang.github.io/sitemap.xml' > {deploy_path}/robots.txt".format(**env))
+    gh_pages()
 
 def gh_pages():
     """Publish to GitHub Pages"""
