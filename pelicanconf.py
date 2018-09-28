@@ -81,7 +81,7 @@ SITEMAP = {
 DISQUS_SITENAME = "http-yang2lalang-github-io"
 ADD_THIS_ID = 'ra-5bac97e477d3d598'
 
-
+GOOGLE_ANALYTICS = "UA-126577907-1"
 
 
 GOOGLE_ADSENSE = {
