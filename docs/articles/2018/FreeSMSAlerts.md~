@@ -33,7 +33,7 @@ Now that we have our Alerts running and we see our alerts delivered as email mes
 
 Multi-media messaging services (MMS) are usually available on most network carriers. This method requires us to label the email alerts that we recieve from trading view and then forward the same message by mms to our mobile phone. We will assume that your network carrier is not blocking you from recieving MMS for free (I have seen this in 2018!!!). On gmail we click on **Settings** > **Forwarding and POP/IMAP** > **Add a forwarding address**. Here you have to input your Mobile Message Gateway usually in the format;  **number@mms.operatorgateway.com**.  This is an email to which gmail forwards email messages and you recieve this as an MMS message in your mobile phone. Your mobile carrier has to activate this feature for it to work and provide you with a mobile message gateway for you recieve these emails.
 
-### Create a label in gmail and forward emails to the MMS gateway
+##2. Create a label in gmail and forward emails to the MMS gateway
 
 In gmail click **Settings** > **Filters and Blocked Addresses** > **Create a new filter**
 ![Create a label in gmail]({filename}/images/createfilter.png){.img-center}

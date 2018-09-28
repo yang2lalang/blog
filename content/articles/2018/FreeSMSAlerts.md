@@ -40,7 +40,7 @@ In gmail click **Settings** > **Filters and Blocked Addresses** > **Create a new
 
 In the **From** field of the form that we are presented, we write the [email address used by Trading view](noreply@tradingview.com) to send us alerts. This email might change from time to time just look at the sender email and include it in this field to identify the sender and click  **Create filter with this search** at the bottom right of this form.
 
-From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice. Select the check box **Forward it** and here select the forwarding address previously created and click save.
+From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice. Select the check box **Forward it** and here select the forwarding address previously created and click **Create filter** to finish the process.
 
 ![Create a label in gmail]({filename}/images/labeltradingview.png){.img-center}
 
