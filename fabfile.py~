@@ -87,7 +87,7 @@ def publish():
         extra_opts='-c',
     )
     local('echo yang2lalang.com > {deploy_path}/CNAME'.format(**env))
-    local("echo $'User-agent: *\nSitemap: https://yang2lalang.com/sitemap.xml' > {deploy_path}/robots.txt".format(**env))
+    local("echo $'User-agent: *\nSitemap: http://yang2lalang.com/sitemap.xml' > {deploy_path}/robots.txt".format(**env))
     gh_pages()
 
 def gh_pages():
