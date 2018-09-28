@@ -31,20 +31,20 @@ Now that we have our Alerts running and we see our alerts delivered as email mes
 
 ##1. First Case: Deliver Alerts by MMS
 
-Multi-media messaging services (MMS) are usually available on most network carriers. This method requires us to label the email alerts that we recieve from trading view and then forward the same message by mms to our mobile phone. I hope to God for your own good that your network carrier is not blocking you from recieving MMS for free (I have seen this in 2018!!!). So we label our trading view alerts as shown below:
+Multi-media messaging services (MMS) are usually available on most network carriers. This method requires us to label the email alerts that we recieve from trading view and then forward the same message by mms to our mobile phone. We will assume that your network carrier is not blocking you from recieving MMS for free (I have seen this in 2018!!!). On gmail we click on **Settings** > **Forwarding and POP/IMAP** > **Add a forwarding address**. Here you have to input your Mobile Message Gateway usually in the format;  **number@mms.operatorgateway.com**.  This is an email to which gmail forwards email messages and you recieve this as an MMS message in your mobile phone. Your mobile carrier has to activate this feature for it to work and provide you with a mobile message gateway for you recieve these emails.
 
-### Create a label in gmail
+##2. Create a label in gmail and forward emails to the MMS gateway
 
 In gmail click **Settings** > **Filters and Blocked Addresses** > **Create a new filter**
 ![Create a label in gmail]({filename}/images/createfilter.png){.img-center}
 
-In the **From** field of the form we are presentrd, we write the [email address used by Trading view](noreply@tradingview.com) to send us alerts. This email might change from time to time just look at the sender email and include it in this field to identify the sender and click  **Create filter with this search** at the bottom right of this form.
+In the **From** field of the form that we are presented, we write the [email address used by Trading view](noreply@tradingview.com) to send us alerts. This email might change from time to time just look at the sender email and include it in this field to identify the sender and click  **Create filter with this search** at the bottom right of this form.
 
-From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice. Select the check box **Forward it** and here select the forwarding address previously created.
+From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box **Apply Label** and click **Choose label**. A drop-down menu is presented and we create a label by choosing **New Label**. Set name the label as **tradingview** or to another name of your choice. Select the check box **Forward it** and here select the forwarding address previously created and click save.
 
 ![Create a label in gmail]({filename}/images/labeltradingview.png){.img-center}
 
-### Now forward labelled email to mobile by MMS
+# Conclusion
 
-Now the label just tags all emails we recieve from Tradingview, we still need to forward them to our mobile phone by MMS.  **Settings** > **Forwarding and POP/IMAP** > **Add a forwarding address**. Here you have to input your Mobile Message Gateway usually in the format;  number@mms.operatorgateway.com.  This is an email to which gmail forwards email messages and you get to recieve this as an MMS message in your mobile phone. Your mobile carrier has to provide this access for it to work and provide you with a mobile message gateway for you recieve these emails. A list of message gateways for some mobile phone carriers can be found [here](https://kb.sandisk.com/app/answers/detail/a_id/17056/~/list-of-mobile-carrier-gateway-addresses) at the time of this writing. The forward address has to be verified to become activated by typing the code recieved from gmail to your mobile phone via MMS.
+Now the label just tags all emails we recieve from Tradingview and forwards them to our phone by MMS. A list of message gateways for some mobile phone carriers can be found [here](https://kb.sandisk.com/app/answers/detail/a_id/17056/~/list-of-mobile-carrier-gateway-addresses) at the time of this writing. Please note that the forward address has to be verified to become activated by typing the code recieved from gmail to your mobile phone via MMS.
 
