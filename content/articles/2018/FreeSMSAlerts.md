@@ -1,15 +1,13 @@
-Title: How to get Trading view Alerts by sms for free
+Title: How to get Trading view Alerts on your mobile phone for free
 Date: 2018-09-17 12:19
 Modified: 2018-09-17 12:19
 Category: Trading
 Tags: Tradingview, sms, gmail
 
-## **Introduction**
 
+This will be the first post in our new blog! Today i am going to show how we can recieve alerts created on [Trading view](https://www.tradingview.com/) by MMS directly on your mobile phone for free. At the time of this writing, trading view only sends email and email-to-sms alerts for free while the sms alerts are reserved for premium subscribers only. The rest of us minions have to fork out a hefty fine for the premium plan or make do with email alerts.
 
-This will be the first post in our new blog! Today i am going to show how we can recieve alerts created on [Trading view](https://www.tradingview.com/) by sms directly on your mobile phone for free. At the time of this writing, trading view only sends email and email-to-sms alerts for free while the sms alerts are reserved for premium subscribers only. The rest of us minions have to fork out a hefty fine for the premium plan or make do with email alerts.
-
-But why do we even need sms alerts when we can get the same information by email ?  Well, in trading, especially if you trade intra day, you might not always be in front of your computer to follow the charts so most traders set alerts to monitor movements in the market. If we get only email alerts or email-to-sms alerts, this leaves us checking our email every minute just to see if we have an alert!!! Hardly practical. Now i will not go into detail into what happens when you are on the road or without email access or having lunch at a fancy resturant, let's just say that you always want to be alerted as soon as the market moves. So we need our alerts to delivered as an sms messages to our mobile phone. This method in my view is easier to stay connected to the market than to always be opening an email box and checking for an alert.
+But why do we even need mobile alerts when we can get the same information by email ?  Well, in trading, especially if you trade intra day, you might not always be in front of your computer to follow the charts so most traders set alerts to monitor movements in the market. If we get only email alerts or email-to-sms alerts, this leaves us checking our email every minute just to see if we have an alert!!! Hardly practical. Now i will not go into detail into what happens when you are on the road or without email access or having lunch at a fancy resturant, let's just say that you always want to be alerted as soon as the market moves. So we need our alerts to delivered as an sms messages to our mobile phone. This method in my view is easier to stay connected to the market than to always be opening an email box and checking for an alert.
 
 # **Setup the alert first!**
 
