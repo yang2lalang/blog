@@ -3,8 +3,8 @@
 <head>
           <title>Franklin is Blogging</title>
         <meta charset="utf-8" />
-        <link href="http://www.yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Full Atom Feed" />
-        <link href="http://www.yang2lalang.com/feeds/trading.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Categories Atom Feed" />
+        <link href="http://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Full Atom Feed" />
+        <link href="http://yang2lalang.com/feeds/trading.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Categories Atom Feed" />
 
 
     <meta name="tags" content="Tradingview" />
@@ -15,7 +15,7 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="http://www.yang2lalang.com/">Franklin is Blogging <strong>Robotics Software Engineer, Part time Trader,  Consultant</strong></a></h1>
+                <h1><a href="http://yang2lalang.com/">Franklin is Blogging <strong>Robotics Software Engineer, Part time Trader,  Consultant</strong></a></h1>
         </header><!-- /#banner -->
         <nav id="menu"><ul>
             <li><a href="/archives.html">Archives</a></li>
@@ -25,7 +25,7 @@
 <section id="content" class="body">
   <header>
     <h2 class="entry-title">
-      <a href="http://www.yang2lalang.com/how-to-get-trading-view-alerts-by-sms-for-free.html" rel="bookmark"
+      <a href="http://yang2lalang.com/how-to-get-trading-view-alerts-by-sms-for-free.html" rel="bookmark"
          title="Permalink to How to get Trading view Alerts by sms for free">How to get Trading view Alerts by sms for free</a></h2>
  
   </header>
@@ -37,7 +37,7 @@
       September 17, 2018
     </time>
     <address class="vcard author">
-      By           <a class="url fn" href="http://www.yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
+      By           <a class="url fn" href="http://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
     </address>
   </footer><!-- /.post-info -->
   <div class="entry-content">
@@ -47,20 +47,20 @@
 <h1><strong>Setup the alert first!</strong></h1>
 <h2>Insert indicator on chart</h2>
 <p>Lets say we went to be alert on a MA cross between the 5-period moving average and the 55-period exponential moving average on the 1hr EUR-USD chart. First we set-up our chart in trading view by including all the required indicators as shown below:</p>
-<p><img alt="Insert indicator on chart" class="img-center" src="http://www.yang2lalang.com/images/eurusdIndicators.png"></p>
+<p><img alt="Insert indicator on chart" class="img-center" src="http://yang2lalang.com/images/eurusdIndicators.png"></p>
 <h2>Create the alerts based on the indicator</h2>
 <p>Choose the alert condition, in the image below we have chosen to be alerted when ever there is cross between the MA-5 and the EMA-55 on the 1hr EUR-USD chart. We set our alert to go off once per minute since we want to continually test this condition every minute  You can also choose Once-Per-Bar Close  but this causes the alert to be triggered only after the bar closes. Set the Alert actions to Email-to-sms, this is the most important part. Email-to-sms is a free service on <a href="https://www.tradingview.com/">Trading view</a> that let's send your alerts to an email which you have chosen in your profile. The email message can be customized by editing the message field and is sent in plain text removing all the clutter and images in a simple E-mail alert. We propose that you set-up a <a href="https://www.gmail.com/">gmail</a> account for reciving these Email-to-sms alerts as our tutorial is based on reading our email using google scripts in real-time.</p>
-<p><img alt="Create Alerts based on indicator" class="img-center" src="http://www.yang2lalang.com/images/createalert.png"></p>
+<p><img alt="Create Alerts based on indicator" class="img-center" src="http://yang2lalang.com/images/createalert.png"></p>
 <p>Now that we have our Alerts running and we see our alerts delivered as email messages but we need to have them delivered to our mobile phone. Several options exist:</p>
 <h1><strong>Forward Email alerts to mobile phone</strong></h1>
 <h2>1. First Case: Deliver Alerts by MMS</h2>
 <p>Multi-media messaging services (MMS) are usually available on most network carriers. This method requires us to label the email alerts that we recieve from trading view and then forward the same message by mms to our mobile phone. I hope to God for your own good that your network carrier is not blocking you from recieving MMS for free (I have seen this in 2018!!!). So we label our trading view alerts as shown below:</p>
 <h3>Create a label in gmail</h3>
 <p>In gmail click <strong>Settings</strong> &gt; <strong>Filters and Blocked Addresses</strong> &gt; <strong>Create a new filter</strong>
-<img alt="Create a label in gmail" class="img-center" src="http://www.yang2lalang.com/images/createfilter.png"></p>
+<img alt="Create a label in gmail" class="img-center" src="http://yang2lalang.com/images/createfilter.png"></p>
 <p>In the <strong>From</strong> field of the form we are presentrd, we write the <a href="noreply@tradingview.com">email address used by Trading view</a> to send us alerts. This email might change from time to time just look at the sender email and include it in this field to identify the sender and click  <strong>Create filter with this search</strong> at the bottom right of this form.</p>
 <p>From the search results we will be presented with a form for actions to perform on a message matching the search. Select the check box <strong>Apply Label</strong> and click <strong>Choose label</strong>. A drop-down menu is presented and we create a label by choosing <strong>New Label</strong>. Set name the label as <strong>tradingview</strong> or to another name of your choice. Select the check box <strong>Forward it</strong> and here select the forwarding address previously created.</p>
-<p><img alt="Create a label in gmail" class="img-center" src="http://www.yang2lalang.com/images/labeltradingview.png"></p>
+<p><img alt="Create a label in gmail" class="img-center" src="http://yang2lalang.com/images/labeltradingview.png"></p>
 <h3>Now forward labelled email to mobile by MMS</h3>
 <p>Now the label just tags all emails we recieve from Tradingview, we still need to forward them to our mobile phone by MMS.  <strong>Settings</strong> &gt; <strong>Forwarding and POP/IMAP</strong> &gt; <strong>Add a forwarding address</strong>. Here you have to input your Mobile Message Gateway usually in the format;  number@mms.operatorgateway.com.  This is an email to which gmail forwards email messages and you get to recieve this as an MMS message in your mobile phone. Your mobile carrier has to provide this access for it to work and provide you with a mobile message gateway for you recieve these emails. A list of message gateways for some mobile phone carriers can be found <a href="https://kb.sandisk.com/app/answers/detail/a_id/17056/~/list-of-mobile-carrier-gateway-addresses">here</a> at the time of this writing. The forward address has to be verified to become activated by typing the code recieved from gmail to your mobile phone via MMS.</p>
   </div><!-- /.entry-content -->
