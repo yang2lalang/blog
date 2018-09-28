@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'http://yang2lalang.com'
+SITEURL = 'http://www.yang2lalang.com'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR
@@ -31,7 +31,7 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
-LINKS = (('Home', 'http://yang2lalang.com'),('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'),)
+LINKS = (('Home', 'http://www.yang2lalang.com'),('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'),)
 
 
 SOCIAL = (('linkedin', 'http://www.linkedin.com/in/franklinokoli/'),
@@ -56,7 +56,7 @@ OUTPUT_PATH = 'docs/'
 
 MARKUP = ('md')
 STATIC_PATHS = ['images', 'extra','articles','pages']
-PLUGIN_PATH = './pelican-plugins'
+PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
 THEME = './themes/Flex'
