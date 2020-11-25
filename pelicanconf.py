@@ -59,11 +59,10 @@ STATIC_PATHS = ['images', 'extra','articles','pages']
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = './pelican-themes/Flex'
+THEME = 'pelican-themes/Flex'
 
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-#JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 SITEMAP = {
     'format': 'xml',
