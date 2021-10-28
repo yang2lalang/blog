@@ -38,7 +38,7 @@ LINKS = (('Home', 'http://yang2lalang.com'),('Researchgate', 'https://www.resear
 
 SOCIAL = (('linkedin', 'http://www.linkedin.com/in/franklinokoli/'),
 	  ('github', 'https://github.com/yang2lalang'),
-      ("rss", "/docs/feeds/all.atom.xml"),
+      ("rss", "/feeds/all.atom.xml"),
       )
 
 MENUITEMS = (('Archives', '/archives.html'),
