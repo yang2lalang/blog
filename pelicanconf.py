@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'http://yang2lalang.com'
+SITEURL = 'https://yang2lalang.com'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR

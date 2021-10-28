@@ -1,174 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/stylesheet/style.min.css">
-
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="http://yang2lalang.com/theme/pygments/monokai.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/solid.css">
-
-
-    <link href="http://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Atom">
+          <title>Franklin is Blogging - How to read and forward Trading view Alerts to sms using google scripts</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <link href="https://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Full Atom Feed" />
+        <link href="https://yang2lalang.com/feeds/trading.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Categories Atom Feed" />
 
 
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-126577907-1', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="tags" content="Tradingview" />
+    <meta name="tags" content="sms" />
+    <meta name="tags" content="gmail" />
+    <meta name="tags" content="Free.fr" />
 
-<meta name="author" content="Franklin OKOLI" />
-<meta name="description" content="In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator (Free Mobile France …" />
-<meta name="keywords" content="Tradingview, sms, gmail, Free.fr">
-
-
-<meta property="og:site_name" content="Franklin is Blogging"/>
-<meta property="og:title" content="How to read and forward Trading view Alerts to sms using google scripts"/>
-<meta property="og:description" content="In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator (Free Mobile France …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://yang2lalang.com/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-09-28 11:42:00+02:00"/>
-<meta property="article:modified_time" content="2018-09-28 11:42:00+02:00"/>
-<meta property="article:author" content="http://yang2lalang.com/author/franklin-okoli.html">
-<meta property="article:section" content="Trading"/>
-<meta property="article:tag" content="Tradingview"/>
-<meta property="article:tag" content="sms"/>
-<meta property="article:tag" content="gmail"/>
-<meta property="article:tag" content="Free.fr"/>
-<meta property="og:image" content="./images/cartoon_ik.png">
-
-  <title>Franklin is Blogging &ndash; How to read and forward Trading view Alerts to sms using google scripts</title>
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-9421131783612830",
-      enable_page_level_ads: true
-    });
-  </script>
 </head>
-<body class="light-theme">
-  <aside>
-    <div>
-      <a href="http://yang2lalang.com">
-        <img src="./images/cartoon_ik.png" alt="Franklin OKOLI" title="Franklin OKOLI">
-      </a>
 
-      <h1>
-        <a href="http://yang2lalang.com">Franklin OKOLI</a>
-      </h1>
-
-<p>Robotics Software Engineer, Part time Trader,  Consultant</p>
-
-      <nav>
-        <ul class="list">
-
-
-
-            <li>
-              <a target="_self" href="http://yang2lalang.com" >Home</a>
-            </li>
-            <li>
-              <a target="_self" href="https://www.researchgate.net/profile/Franklin_Okoli" >Researchgate</a>
-            </li>
-        </ul>
-      </nav>
-
-      <ul class="social">
-          <li>
-            <a  class="sc-linkedin" href="http://www.linkedin.com/in/franklinokoli/" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a  class="sc-github" href="https://github.com/yang2lalang" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-      </ul>
-    </div>
-
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle ads-aside"
-           data-ad-client="ca-pub-9421131783612830"
-           data-ad-slot="5340595560"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-  </aside>
-  <main>
-
-    <nav>
-      <a href="http://yang2lalang.com">Home</a>
-
-      <a href="/archives.html">Archives</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/tags.html">Tags</a>
-
-      <a href="http://yang2lalang.com/feeds/all.atom.xml">Atom</a>
-
-    </nav>
-
-<article class="single">
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://yang2lalang.com/">Franklin is Blogging <strong>Robotics Software Engineer, Part time Trader,  Consultant</strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/archives.html">Archives</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="https://yang2lalang.com/category/infrastructure.html">Infrastructure</a></li>
+            <li class="active"><a href="https://yang2lalang.com/category/trading.html">Trading</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
   <header>
-      
-    <h1 id="how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts">How to read and forward Trading view Alerts to sms using google scripts</h1>
-    <p>
-      Posted on September 28, 2018 in <a href="http://yang2lalang.com/category/trading.html">Trading</a>
-
-        &#8226; 4 min read
-    </p>
+    <h2 class="entry-title">
+      <a href="https://yang2lalang.com/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html" rel="bookmark"
+         title="Permalink to How to read and forward Trading view Alerts to sms using google scripts">How to read and forward Trading view Alerts to sms using google scripts</a></h2>
+ 
   </header>
-
-
-  <div>
+  <footer class="post-info">
+    <time class="published" datetime="2018-09-28T11:42:00+02:00">
+      September 28, 2018
+    </time>
+    <time class="modified" datetime="2018-09-28T11:42:00+02:00">
+      September 28, 2018
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="https://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
+    </address>
+    <div class="category">
+        Category: <a href="https://yang2lalang.com/category/trading.html">Trading</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="https://yang2lalang.com/tag/tradingview.html">Tradingview</a>
+            <a href="https://yang2lalang.com/tag/sms.html">sms</a>
+            <a href="https://yang2lalang.com/tag/gmail.html">gmail</a>
+            <a href="https://yang2lalang.com/tag/freefr.html">Free.fr</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
     <p>In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator <a href="http://www.free.fr">(Free Mobile France)</a> which offers the facility for us to forward email messages to our mobile phone as an sms message. We will make use of the google scripts and the powerful gmail API to access and read our email in real-time and forward the required messages. An excellent <a href="http://webinventif.com/envoyer-sms-depuis-gmail-via-freemobile/">(tutorial)</a> has been written on this subject though in french language. In this article, i will try to explain in detail how we can use the label we created previously to recieve trading view alerts by sms. We will be making use of google scripts to access our email in real time.</p>
 <h1><strong>SMS notification by visiting a URL</strong></h1>
 <p>The mobile operator <a href="http://www.free.fr">(Free Mobile)</a> allows us an option to receieve an sms notification to our mobile phone by visiting a personalized url created for each subscriber. The format for this personalized link is as shown below:</p>
-<div class="highlight"><pre><span></span><span class="err">  https://smsapi.free-mobile.fr/sendmsg?user=Username&amp;pass=PassCode&amp;msg=Hello%20World%20</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>  https://smsapi.free-mobile.fr/sendmsg?user=Username&amp;pass=PassCode&amp;msg=Hello%20World%20
+</code></pre></div>
 
 <p>The username and password are generated by the user in the Free mobile user account. Please follow this <a href="http://webinventif.com/envoyer-sms-depuis-gmail-via-freemobile/">(tutorial)</a> to get a more detailed description of how to create this passcode. If your mobile operator offers a service like this, it can be possible to recieve sms notifications in a similar manner by using the url provided by your mobile operator. </p>
 <h1><strong>Script to read our email</strong></h1>
 <p>Go to <a href="https://script.google.com">(google scripts)</a> and click on <strong>New Script</strong> to create a new script. The script that reads our email is a single function written using google script library. The script is called periodically to check the email for new messages tagged with the label we created. Let us assume we created a label called <strong>"tradingview"</strong> as in our previous tutorial. The first line in our function tells gmail to get all messages with the label <strong>"tradingview"</strong> :</p>
-<div class="highlight"><pre><span></span>  <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">getUserLabelByName</span><span class="p">(</span><span class="s1">&#39;tradingview&#39;</span><span class="p">);</span>  
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>  <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">getUserLabelByName</span><span class="p">(</span><span class="s1">&#39;tradingview&#39;</span><span class="p">);</span>  
+</code></pre></div>
 
 <p>Now we put some error checking incase we recieve an empty response vector, we create a new label otherwise we continue to run the rest of the code within the else block.</p>
-<div class="highlight"><pre><span></span>  <span class="k">if</span><span class="p">(</span><span class="nx">label</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>  <span class="k">if</span><span class="p">(</span><span class="nx">label</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">createLabel</span><span class="p">(</span><span class="s1">&#39;tradingview&#39;</span><span class="p">);</span>
   <span class="p">}</span>
@@ -176,79 +78,70 @@
   <span class="p">{</span>
    <span class="c1">//continue running here ...</span>
   <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Gmail organizes related messages in threads. For messages tagged with our label of interest, we are interested in the newest (or latest) unread message in this thread. So we get latest thread in the thread array using:</p>
-<div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">threads</span> <span class="o">=</span> <span class="nx">label</span><span class="p">.</span><span class="nx">getThreads</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>   
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">threads</span> <span class="o">=</span> <span class="nx">label</span><span class="p">.</span><span class="nx">getThreads</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">);</span>   
+</code></pre></div>
 
 <p>Now we loop through the threads to check for unread messages and for all the unread messages we store the message in a variable while skipping the read messages. The rest of the code in the for loop is explained subsequently.</p>
-<div class="highlight"><pre><span></span> <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">threads</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+<div class="highlight"><pre><span></span><code> <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">threads</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
        <span class="p">{</span>  
       <span class="kd">var</span> <span class="nx">thread</span> <span class="o">=</span> <span class="nx">threads</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
       <span class="kd">var</span> <span class="nx">messages</span> <span class="o">=</span> <span class="nx">thread</span><span class="p">.</span><span class="nx">getMessages</span><span class="p">();</span>
-      <span class="kd">var</span> <span class="nx">message</span><span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">thread</span><span class="p">.</span><span class="nx">getMessageCount</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+      <span class="kd">var</span> <span class="nx">message</span><span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">thread</span><span class="p">.</span><span class="nx">getMessageCount</span><span class="p">()</span><span class="o">-</span><span class="mf">1</span><span class="p">];</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">message</span><span class="p">.</span><span class="nx">isUnread</span><span class="p">())</span> 
            <span class="p">{</span>
          <span class="k">continue</span><span class="p">;</span> 
            <span class="p">}</span>
           <span class="c1">//code continues till the end of for loop ... </span>
        <span class="p">}</span> 
-</pre></div>
-
+</code></pre></div>
 
 <p>Now we can extract the important parts of the unread message that we like such as the sender, subject , date and the message body.</p>
-<div class="highlight"><pre><span></span>      <span class="kd">var</span> <span class="nx">from</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getFrom</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code>      <span class="kd">var</span> <span class="kr">from</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getFrom</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">subject</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// date/time</span>
       <span class="kd">var</span> <span class="nx">htmlBody</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getBody</span><span class="p">();</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>It is important to note here that the message we recieveved from <a href="noreply@tradingview.com">trading view</a> will be in a html format. The html tags and and attributes must be stripped off in order to obtain a short, concise and readable message that will be forwarded to us via sms. In order top do this we make use of a script contributed by a <a href="https://stackoverflow.com/questions/29648235/google-apps-scraping-script-to-run-regullary-till-all-sites-inner-pages-are-ext">user on stack overflow </a>:</p>
-<div class="highlight"><pre><span></span>   <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">getTextFromHtml</span><span class="p">(</span><span class="nx">htmlBody</span><span class="p">);</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>   <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">getTextFromHtml</span><span class="p">(</span><span class="nx">htmlBody</span><span class="p">);</span>
+</code></pre></div>
 
 <p>Finally we create a url containing the unread gmail messages labelled <strong>"tradingview"</strong> using the html body as shown below:</p>
-<div class="highlight"><pre><span></span>    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;https://smsapi.free-mobile.fr/sendmsg?user=35625729&amp;pass=ZggZIzu5RoKzKx&amp;msg=&#39;</span> <span class="o">+</span> <span class="s1">&#39;tradingView- &#39;</span> <span class="o">+</span> <span class="nx">date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">+</span>  <span class="nx">msg</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;https://smsapi.free-mobile.fr/sendmsg?user=35625729&amp;pass=ZggZIzu5RoKzKx&amp;msg=&#39;</span> <span class="o">+</span> <span class="s1">&#39;tradingView- &#39;</span> <span class="o">+</span> <span class="nx">date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">+</span>  <span class="nx">msg</span>
+</code></pre></div>
 
 <p>This url is encoded to avoid errors related <a href="https://www.w3schools.com/tags/ref_urlencode.asp">using unsafe characters in a url</a> and ensure that only ASCII character-set are used.</p>
-<div class="highlight"><pre><span></span>    <span class="nx">urlencoded</span> <span class="o">=</span> <span class="nb">encodeURI</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> 
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>    <span class="nx">urlencoded</span> <span class="o">=</span> <span class="nb">encodeURI</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> 
+</code></pre></div>
 
 <p>We make use of the gmail api function <strong>UrlFetchApp</strong> to fetch the url. This services is used to fetch resources and to communicate with hosts on the internet according to it's  <a href="https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app">documentation</a>.</p>
-<div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">urlencoded</span><span class="p">,</span> <span class="p">{</span><span class="nx">muteHttpExceptions</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">escaping</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">urlencoded</span><span class="p">,</span> <span class="p">{</span><span class="nx">muteHttpExceptions</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">escaping</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
+</code></pre></div>
 
 <p>After reading an uread message and forwarding it to our mobile phone by sms, the last thing we want to do is to mark this email as read:</p>
-<div class="highlight"><pre><span></span><span class="nx">message</span><span class="p">.</span><span class="nx">markRead</span><span class="p">()</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nx">message</span><span class="p">.</span><span class="nx">markRead</span><span class="p">()</span>
+</code></pre></div>
 
 <p>The entire script is a function named <strong>Gmail_send_sms</strong> is as shown below: </p>
-<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">Gmail_send_sms</span><span class="p">(){</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Gmail_send_sms</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">getUserLabelByName</span><span class="p">(</span><span class="s1">&#39;tradingview&#39;</span><span class="p">);</span>  
   <span class="k">if</span><span class="p">(</span><span class="nx">label</span> <span class="o">==</span> <span class="kc">null</span><span class="p">){</span>
     <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">createLabel</span><span class="p">(</span><span class="s1">&#39;tradingview&#39;</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">else</span><span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">threads</span> <span class="o">=</span> <span class="nx">label</span><span class="p">.</span><span class="nx">getThreads</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>   
-    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">threads</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  
+    <span class="kd">var</span> <span class="nx">threads</span> <span class="o">=</span> <span class="nx">label</span><span class="p">.</span><span class="nx">getThreads</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">);</span>   
+    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">threads</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  
       <span class="kd">var</span> <span class="nx">thread</span> <span class="o">=</span> <span class="nx">threads</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
       <span class="kd">var</span> <span class="nx">messages</span> <span class="o">=</span> <span class="nx">thread</span><span class="p">.</span><span class="nx">getMessages</span><span class="p">();</span>
-      <span class="kd">var</span> <span class="nx">message</span><span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">thread</span><span class="p">.</span><span class="nx">getMessageCount</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+      <span class="kd">var</span> <span class="nx">message</span><span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">thread</span><span class="p">.</span><span class="nx">getMessageCount</span><span class="p">()</span><span class="o">-</span><span class="mf">1</span><span class="p">];</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">message</span><span class="p">.</span><span class="nx">isUnread</span><span class="p">())</span> <span class="p">{</span>
          <span class="k">continue</span><span class="p">;</span> 
        <span class="p">}</span>
-      <span class="kd">var</span> <span class="nx">from</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getFrom</span><span class="p">();</span>
+      <span class="kd">var</span> <span class="kr">from</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getFrom</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">subject</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getSubject</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// date/time</span>
       <span class="kd">var</span> <span class="nx">htmlBody</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">getBody</span><span class="p">();</span>
@@ -265,11 +158,10 @@
 
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>The script that enables us to strip out the html tags and attributes is a function called <strong>getTextFromHtml</strong></p>
-<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getTextFromHtml</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">getTextFromHtml</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">getTextFromNode</span><span class="p">(</span><span class="nx">Xml</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">getElement</span><span class="p">());</span>
 <span class="p">}</span>
 
@@ -281,93 +173,20 @@
     <span class="k">default</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>We will now save this script for the first time during which we are prompted by google authentication to review permissions for the script in order to grant access to the script to run in our gmail account.</p>
-<p><img alt="authorize_gmail" class="img-center" src="http://yang2lalang.com/images/authorize_gmail.png"></p>
+<p><img alt="authorize_gmail" class="img-center" src="https://yang2lalang.com/images/authorize_gmail.png"></p>
 <p>We want our script to run periodically to check our email and forward the unread messages corresponding to a particular label by sms. So we set a trigger which calls the script periodically by going to <strong>Edit</strong> &gt; <strong>Current project's triggers</strong> &gt; <strong>Click here to add one now</strong></p>
-<p><img alt="event_trigger" class="img-center" src="http://yang2lalang.com/images/event_trigger.png"></p>
+<p><img alt="event_trigger" class="img-center" src="https://yang2lalang.com/images/event_trigger.png"></p>
 <p>Choose the name of the script under <strong>Run</strong> and under <strong>Event</strong> we select Time-driven. We can then shoose if we want the script to run daily, hourly or by the minute. Click <strong>Save</strong> to save all changes. Now our script is well set-up and running. New email messages from Trading view will be forwarded to our mobile phone as sms notifications.</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="http://yang2lalang.com/tag/tradingview.html">Tradingview</a>
-      <a href="http://yang2lalang.com/tag/sms.html">sms</a>
-      <a href="http://yang2lalang.com/tag/gmail.html">gmail</a>
-      <a href="http://yang2lalang.com/tag/freefr.html">Free.fr</a>
-    </p>
-  </div>
-
-  <div class="center social-share">
-    <p>Like this article? Share it with your friends!</p>
-    <div class="addthis_native_toolbox"></div>
-    <div class="addthis_sharing_toolbox"></div>
-    <div class="addthis_inline_share_toolbox"></div>
-  </div>
-
-
-    <div class="addthis_relatedposts_inline"></div>
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle ads-responsive"
-         data-ad-client="ca-pub-9421131783612830"
-         data-ad-slot="7257980762"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-<!-- Disqus -->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'http-yang2lalang-github-io';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>
-    Please enable JavaScript to view comments.
-</noscript>
-<!-- End Disqus -->
-</article>
-
-    <footer>
-<p>
-  &copy; 2020  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
-</p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p><p>
-  <a rel="license"
-     href="http://creativecommons.org/licenses/by-sa/4.0/"
-     target="_blank">
-    <img alt="Creative Commons License"
-         title="Creative Commons License"
-         style="border-width:0"
-           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
-         width="80"
-         height="15"/>
-  </a>
-</p>    </footer>
-  </main>
-
-
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bac97e477d3d598" async="async"></script>
-
-
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " Franklin is Blogging ",
-  "url" : "http://yang2lalang.com",
-  "image": "./images/cartoon_ik.png",
-  "description": "Franklin OKOLI's My thoughts and a few tutorials"
-}
-</script>
-
-
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
 </body>
 </html>
