@@ -1,4 +1,4 @@
-Title: How to get Trading view Alerts on your mobile phone for free
+Title: How to deploy an Apache Server in a VPC cluster on AWS using Terraform
 Date: 2021-10-28 13:42
 Modified: 2021-10-28 13:42
 Category: Infrastructure
@@ -13,7 +13,7 @@ This post shows how to create an live running Apache webserver on [AWS](https://
 ##Insert indicator on chart
 Lets say we went to be alert on a MA cross between the 5-period moving average and the 55-period exponential moving average on the 1hr EUR-USD chart. First we set-up our chart in trading view by including all the required indicators as shown below:
 
-![Insert indicator on chart]({filename}/images/eurusdIndicators.png){.img-center}
+![Insert indicator on chart]({static}/images/eurusdIndicators.png){.img-center}
 
 ## Create the alerts based on the indicator
 Choose the alert condition, in the image below we have chosen to be alerted when ever there is cross between the MA-5 and the EMA-55 on the 1hr EUR-USD chart. We set 

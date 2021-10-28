@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from datetime import datetime
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
@@ -9,6 +10,7 @@ SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR
 SITELOGO = './images/cartoon_ik.png'
+
 PATH = 'content'
 
 BROWSER_COLOR = '#333333'
@@ -35,7 +37,9 @@ LINKS = (('Home', 'http://yang2lalang.com'),('Researchgate', 'https://www.resear
 
 
 SOCIAL = (('linkedin', 'http://www.linkedin.com/in/franklinokoli/'),
-	  ('github', 'https://github.com/yang2lalang'),)
+	  ('github', 'https://github.com/yang2lalang'),
+      ("rss", "/docs/feeds/all.atom.xml"),
+      )
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
@@ -47,19 +51,21 @@ CC_LICENSE = {
     'slug': 'by-sa'
 }
 
-COPYRIGHT_YEAR = 2020
+
+COPYRIGHT_YEAR = datetime.now().year
 
 DEFAULT_PAGINATION = 10
+
 OUTPUT_PATH = 'docs/'
 # Uncomment following line if you want document-relative URLs when developing
 #
 
 MARKUP = ('md')
-STATIC_PATHS = ['images', 'extra','articles','pages']
+STATIC_PATHS = ['images', 'extra','articles']
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = 'pelican-themes/Flex'
+THEME = './pelican-themes/Flex'
 
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}

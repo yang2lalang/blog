@@ -149,11 +149,11 @@ function getTextFromNode(x) {
 ```
 We will now save this script for the first time during which we are prompted by google authentication to review permissions for the script in order to grant access to the script to run in our gmail account.
 
-![authorize_gmail]({static}/images/authorize_gmail.png){.img-center}
+![authorize_gmail]({filename}/images/authorize_gmail.png){.img-center}
 
 We want our script to run periodically to check our email and forward the unread messages corresponding to a particular label by sms. So we set a trigger which calls the script periodically by going to **Edit** > **Current project's triggers** > **Click here to add one now**
 
-![event_trigger]({static}/images/event_trigger.png){.img-center}
+![event_trigger]({filename}/images/event_trigger.png){.img-center}
 
 
-Choose the name of the script under **Run** and under **Event** we select Time-driven. We can then shoose if we want the script to run daily, hourly or by the minute. Click **Save** to save all changes. Now our script is well set-up and running. New email messages from Trading view will be forwarded to our mobile phone as sms notifications.
+Choose the name of the script under **Run** and under **Event** we select Time-driven. We can then shoose if we want the script to run daily, hourly or by the minute. Click **Save** to save all changes. Now our script is well set-up and running. New messages from Trading view will be forwarded to our mobile phone as sms notifications.
