@@ -4,133 +4,133 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://yang2lalang.com/</loc>
-<lastmod>2021-10-28T17:14:50-00:00</lastmod>
+<loc>http://localhost:8000/</loc>
+<lastmod>2021-10-28T17:58:21-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tags.html</loc>
-<lastmod>2021-10-28T17:14:50-00:00</lastmod>
+<loc>http://localhost:8000/tags.html</loc>
+<lastmod>2021-10-28T17:58:21-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/categories.html</loc>
-<lastmod>2021-10-28T17:14:50-00:00</lastmod>
+<loc>http://localhost:8000/categories.html</loc>
+<lastmod>2021-10-28T17:58:21-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/authors.html</loc>
-<lastmod>2021-10-28T17:14:50-00:00</lastmod>
+<loc>http://localhost:8000/authors.html</loc>
+<lastmod>2021-10-28T17:58:21-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/archives.html</loc>
-<lastmod>2021-10-28T17:14:50-00:00</lastmod>
+<loc>http://localhost:8000/archives.html</loc>
+<lastmod>2021-10-28T17:58:21-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform.html</loc>
+<loc>http://localhost:8000/how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform.html</loc>
 <lastmod>2021-10-28T13:42:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html</loc>
+<loc>http://localhost:8000/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html</loc>
 <lastmod>2018-09-28T11:42:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/how-to-get-trading-view-alerts-on-your-mobile-phone-for-free.html</loc>
+<loc>http://localhost:8000/how-to-get-trading-view-alerts-on-your-mobile-phone-for-free.html</loc>
 <lastmod>2018-09-17T12:19:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/category/infrastructure.html</loc>
+<loc>http://localhost:8000/category/infrastructure.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/category/trading.html</loc>
+<loc>http://localhost:8000/category/trading.html</loc>
 <lastmod>2018-09-28T11:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/aws.html</loc>
+<loc>http://localhost:8000/tag/aws.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/terraform.html</loc>
+<loc>http://localhost:8000/tag/terraform.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/deployment.html</loc>
+<loc>http://localhost:8000/tag/deployment.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/iaac.html</loc>
+<loc>http://localhost:8000/tag/iaac.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/tradingview.html</loc>
+<loc>http://localhost:8000/tag/tradingview.html</loc>
 <lastmod>2018-09-28T11:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/sms.html</loc>
+<loc>http://localhost:8000/tag/sms.html</loc>
 <lastmod>2018-09-28T11:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/gmail.html</loc>
+<loc>http://localhost:8000/tag/gmail.html</loc>
 <lastmod>2018-09-28T11:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/tag/freefr.html</loc>
+<loc>http://localhost:8000/tag/freefr.html</loc>
 <lastmod>2018-09-28T11:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>https://yang2lalang.com/author/franklin-okoli.html</loc>
+<loc>http://localhost:8000/author/franklin-okoli.html</loc>
 <lastmod>2021-10-28T13:42:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>

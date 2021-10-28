@@ -1,64 +1,266 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Franklin is Blogging - Articles by Franklin OKOLI</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <link href="https://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Full Atom Feed" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="../theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="../theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="../theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="../extra/custom.css">
+
+    <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Atom">
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-126577907-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->  
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+ 
+
+    <meta name="author" content="Franklin OKOLI" />
+    <meta name="description" content="Franklin OKOLI's My thoughts and a few tutorials" />
+  <meta property="og:site_name" content="Franklin is Blogging"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:title" content="Franklin is Blogging"/>
+  <meta property="og:description" content="Franklin OKOLI's My thoughts and a few tutorials"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content=".."/>
+  <meta property="og:image" content="./images/cartoon_ik.png">
+
+  <title>Franklin is Blogging &ndash; Posts by Franklin OKOLI:</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-9421131783612830",
+      enable_page_level_ads: true
+    });
+  </script>
 </head>
+<body >
+  <aside>
+    <div>
+      <a href="../">
+        <img src="./images/cartoon_ik.png" alt="Franklin OKOLI" title="Franklin OKOLI">
+      </a>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://yang2lalang.com/">Franklin is Blogging <strong>Robotics Software Engineer, Part time Trader,  Consultant</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/archives.html">Archives</a></li>
-            <li><a href="/categories.html">Categories</a></li>
-            <li><a href="/tags.html">Tags</a></li>
-            <li><a href="https://yang2lalang.com/category/infrastructure.html">Infrastructure</a></li>
-            <li><a href="https://yang2lalang.com/category/trading.html">Trading</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content">
-<h2>Articles by Franklin OKOLI</h2>
+      <h1>
+        <a href="../">Franklin OKOLI</a>
+      </h1>
 
-<ol id="post-list">
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://yang2lalang.com/how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform.html" rel="bookmark" title="Permalink to How to deploy an Apache Server in a VPC cluster on AWS using Terraform">How to deploy an Apache Server in a VPC cluster on AWS using Terraform</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2021-10-28T13:42:00+02:00"> October 28, 2021 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>This post shows how to create an live running Apache webserver on <a href="https://aws.amazon.com">AWS</a> using <a href="https://terraform.io">terraform</a>. The advantage of this method is to be able to use a repeatable method to spin up infrastructure for software deployment as the business grows. It also creates a clear, detailed  and easily transferrable information …</p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://yang2lalang.com/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html" rel="bookmark" title="Permalink to How to read and forward Trading view Alerts to sms using google scripts">How to read and forward Trading view Alerts to sms using google scripts</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2018-09-28T11:42:00+02:00"> September 28, 2018 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator <a href="http://www.free.fr">(Free Mobile France …</a></p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://yang2lalang.com/how-to-get-trading-view-alerts-on-your-mobile-phone-for-free.html" rel="bookmark" title="Permalink to How to get Trading view Alerts on your mobile phone for free">How to get Trading view Alerts on your mobile phone for free</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2018-09-17T12:19:00+02:00"> September 17, 2018 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>This will be the first post in our new blog! Today i am going to show how we can recieve alerts created on <a href="https://www.tradingview.com/">Trading view</a> by MMS directly on your mobile phone for free. At the time of this writing, trading view only sends email and email-to-sms alerts for free …</p> </div><!-- /.entry-content -->
-        </article></li>
-</ol><!-- /#posts-list -->
-</section><!-- /#content -->
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+<p>Robotics Software Engineer, Part time Trader,  Consultant</p>
+
+      <nav>
+        <ul class="list">
+
+
+
+            <li>
+              <a target="_self" href="http://yang2lalang.com" >Home</a>
+            </li>
+            <li>
+              <a target="_self" href="https://www.researchgate.net/profile/Franklin_Okoli" >Researchgate</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-linkedin" href="http://www.linkedin.com/in/franklinokoli/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/yang2lalang" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="/docs/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-aside"
+           data-ad-client="ca-pub-9421131783612830"
+           data-ad-slot="5340595560"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+  </aside>
+  <main>
+
+    <nav>
+      <a href="../">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://localhost:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="../how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform.html#how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform">How to deploy an Apache Server in a VPC cluster on AWS using Terraform</a></h2>
+    <p>
+      Posted on October 28, 2021 in <a href="../category/infrastructure.html">Infrastructure</a>
+
+
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <div><p>This post shows how to create an live running Apache webserver on <a href="https://aws.amazon.com">AWS</a> using <a href="https://terraform.io">terraform</a>. The advantage of this method is to be able to use a repeatable method to spin up infrastructure for software deployment as the business grows. It also creates a clear, detailed  and easily transferrable information …</p></div>
+        <br>
+        <a class="btn"
+           href="../how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform.html#how-to-deploy-an-apache-server-in-a-vpc-cluster-on-aws-using-terraform">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html#how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts">How to read and forward Trading view Alerts to sms using google scripts</a></h2>
+    <p>
+      Posted on September 28, 2018 in <a href="../category/trading.html">Trading</a>
+
+
+        &#8226; 4 min read
+    </p>
+  </header>
+  <div>
+      <div><p>In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator <a href="http://www.free.fr">(Free Mobile France …</a></p></div>
+        <br>
+        <a class="btn"
+           href="../how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html#how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts">
+          Continue reading
+        </a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../how-to-get-trading-view-alerts-on-your-mobile-phone-for-free.html#how-to-get-trading-view-alerts-on-your-mobile-phone-for-free">How to get Trading view Alerts on your mobile phone for free</a></h2>
+    <p>
+      Posted on September 17, 2018 in <a href="../category/trading.html">Trading</a>
+
+
+        &#8226; 4 min read
+    </p>
+  </header>
+  <div>
+      <div><p>This will be the first post in our new blog! Today i am going to show how we can recieve alerts created on <a href="https://www.tradingview.com/">Trading view</a> by MMS directly on your mobile phone for free. At the time of this writing, trading view only sends email and email-to-sms alerts for free …</p></div>
+        <br>
+        <a class="btn"
+           href="../how-to-get-trading-view-alerts-on-your-mobile-phone-for-free.html#how-to-get-trading-view-alerts-on-your-mobile-phone-for-free">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-9421131783612830"
+       data-ad-slot="9584371569"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+
+    <footer>
+<p>
+  &copy; 2021  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="../theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bac97e477d3d598" async="async"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Franklin is Blogging ",
+  "url" : "..",
+  "image": "./images/cartoon_ik.png",
+  "description": "Franklin OKOLI's My thoughts and a few tutorials"
+}
+</script>
+
 </body>
 </html>

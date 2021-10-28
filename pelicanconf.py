@@ -5,14 +5,14 @@ from datetime import datetime
 
 AUTHOR = u'Franklin OKOLI'
 SITENAME = u'Franklin is Blogging'
-SITEURL = 'https://yang2lalang.com'
+SITEURL = 'http://localhost:8000'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Robotics Software Engineer, Part time Trader,  Consultant'
 SITEDESCRIPTION = '%s\'s My thoughts and a few tutorials' % AUTHOR
 SITELOGO = './images/cartoon_ik.png'
 
 PATH = 'content'
-
+RELATIVE_URLS = True
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
 
@@ -61,15 +61,17 @@ OUTPUT_PATH = 'docs/'
 #
 
 MARKUP = ('md')
-STATIC_PATHS = ['images', 'extra','articles',"extra/CNAME"]
+STATIC_PATHS = ['images', 'extra','articles',"extra/CNAME","extra/custom.css"]
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = './pelican-themes/Flex'
+THEME = './Flex'
 
 EXTRA_PATH_METADATA = {
     "extra/CNAME": {"path": "CNAME"},
 }
+
+CUSTOM_CSS = "extra/custom.css"
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 

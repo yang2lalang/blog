@@ -1,62 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Franklin is Blogging - How to read and forward Trading view Alerts to sms using google scripts</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <link href="https://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Full Atom Feed" />
-        <link href="https://yang2lalang.com/feeds/trading.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Categories Atom Feed" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+          media="(prefers-color-scheme: dark)"
+    href="./theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: dark)"
+          href="./theme/pygments/monokai.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          href="./theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+    <link rel="stylesheet" type="text/css" href="./extra/custom.css">
+
+    <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Atom">
 
 
 
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <meta name="tags" content="Tradingview" />
-    <meta name="tags" content="sms" />
-    <meta name="tags" content="gmail" />
-    <meta name="tags" content="Free.fr" />
+  ga('create', 'UA-126577907-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->  
 
-</head>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://yang2lalang.com/">Franklin is Blogging <strong>Robotics Software Engineer, Part time Trader,  Consultant</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/archives.html">Archives</a></li>
-            <li><a href="/categories.html">Categories</a></li>
-            <li><a href="/tags.html">Tags</a></li>
-            <li><a href="https://yang2lalang.com/category/infrastructure.html">Infrastructure</a></li>
-            <li class="active"><a href="https://yang2lalang.com/category/trading.html">Trading</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="https://yang2lalang.com/how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html" rel="bookmark"
-         title="Permalink to How to read and forward Trading view Alerts to sms using google scripts">How to read and forward Trading view Alerts to sms using google scripts</a></h2>
  
+
+<meta name="author" content="Franklin OKOLI" />
+<meta name="description" content="In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator (Free Mobile France …" />
+<meta name="keywords" content="Tradingview, sms, gmail, Free.fr">
+
+
+  <meta property="og:site_name" content="Franklin is Blogging"/>
+  <meta property="og:title" content="How to read and forward Trading view Alerts to sms using google scripts"/>
+  <meta property="og:description" content="In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator (Free Mobile France …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2018-09-28 11:42:00+02:00"/>
+  <meta property="article:modified_time" content="2018-09-28 11:42:00+02:00"/>
+  <meta property="article:author" content="./author/franklin-okoli.html">
+  <meta property="article:section" content="Trading"/>
+  <meta property="article:tag" content="Tradingview"/>
+  <meta property="article:tag" content="sms"/>
+  <meta property="article:tag" content="gmail"/>
+  <meta property="article:tag" content="Free.fr"/>
+  <meta property="og:image" content="./images/cartoon_ik.png">
+
+  <title>Franklin is Blogging &ndash; How to read and forward Trading view Alerts to sms using google scripts</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-9421131783612830",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body >
+  <aside>
+    <div>
+      <a href="./">
+        <img src="./images/cartoon_ik.png" alt="Franklin OKOLI" title="Franklin OKOLI">
+      </a>
+
+      <h1>
+        <a href="./">Franklin OKOLI</a>
+      </h1>
+
+<p>Robotics Software Engineer, Part time Trader,  Consultant</p>
+
+      <nav>
+        <ul class="list">
+
+
+
+            <li>
+              <a target="_self" href="http://yang2lalang.com" >Home</a>
+            </li>
+            <li>
+              <a target="_self" href="https://www.researchgate.net/profile/Franklin_Okoli" >Researchgate</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-linkedin" href="http://www.linkedin.com/in/franklinokoli/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/yang2lalang" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-rss" href="/docs/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-aside"
+           data-ad-client="ca-pub-9421131783612830"
+           data-ad-slot="5340595560"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+  </aside>
+  <main>
+
+    <nav>
+      <a href="./">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://localhost:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="how-to-read-and-forward-trading-view-alerts-to-sms-using-google-scripts">How to read and forward Trading view Alerts to sms using google scripts</h1>
+    <p>
+      Posted on September 28, 2018 in <a href="./category/trading.html">Trading</a>
+
+        &#8226; 4 min read
+    </p>
   </header>
-  <footer class="post-info">
-    <time class="published" datetime="2018-09-28T11:42:00+02:00">
-      September 28, 2018
-    </time>
-    <time class="modified" datetime="2018-09-28T11:42:00+02:00">
-      September 28, 2018
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="https://yang2lalang.com/author/franklin-okoli.html">Franklin OKOLI</a>
-    </address>
-    <div class="category">
-        Category: <a href="https://yang2lalang.com/category/trading.html">Trading</a>
-    </div>
-    <div class="tags">
-        Tags:
-            <a href="https://yang2lalang.com/tag/tradingview.html">Tradingview</a>
-            <a href="https://yang2lalang.com/tag/sms.html">sms</a>
-            <a href="https://yang2lalang.com/tag/gmail.html">gmail</a>
-            <a href="https://yang2lalang.com/tag/freefr.html">Free.fr</a>
-    </div>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
+
+
+  <div>
     <p>In the previous article, we proposed a method to create alerts on trading view, recieve these alerts by email, tag these alerts with a label and forward these alerts to our mobile phone by MMS. In this article we show a special case of a mobile operator <a href="http://www.free.fr">(Free Mobile France)</a> which offers the facility for us to forward email messages to our mobile phone as an sms message. We will make use of the google scripts and the powerful gmail API to access and read our email in real-time and forward the required messages. An excellent <a href="http://webinventif.com/envoyer-sms-depuis-gmail-via-freemobile/">(tutorial)</a> has been written on this subject though in french language. In this article, i will try to explain in detail how we can use the label we created previously to recieve trading view alerts by sms. We will be making use of google scripts to access our email in real time.</p>
 <h1><strong>SMS notification by visiting a URL</strong></h1>
 <p>The mobile operator <a href="http://www.free.fr">(Free Mobile)</a> allows us an option to receieve an sms notification to our mobile phone by visiting a personalized url created for each subscriber. The format for this personalized link is as shown below:</p>
@@ -176,17 +288,96 @@
 </code></pre></div>
 
 <p>We will now save this script for the first time during which we are prompted by google authentication to review permissions for the script in order to grant access to the script to run in our gmail account.</p>
-<p><img alt="authorize_gmail" class="img-center" src="https://yang2lalang.com/images/authorize_gmail.png"></p>
+<p><img alt="authorize_gmail" class="img-center" src="./images/authorize_gmail.png"></p>
 <p>We want our script to run periodically to check our email and forward the unread messages corresponding to a particular label by sms. So we set a trigger which calls the script periodically by going to <strong>Edit</strong> &gt; <strong>Current project's triggers</strong> &gt; <strong>Click here to add one now</strong></p>
-<p><img alt="event_trigger" class="img-center" src="https://yang2lalang.com/images/event_trigger.png"></p>
+<p><img alt="event_trigger" class="img-center" src="./images/event_trigger.png"></p>
 <p>Choose the name of the script under <strong>Run</strong> and under <strong>Event</strong> we select Time-driven. We can then shoose if we want the script to run daily, hourly or by the minute. Click <strong>Save</strong> to save all changes. Now our script is well set-up and running. New email messages from Trading view will be forwarded to our mobile phone as sms notifications.</p>
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/tradingview.html">Tradingview</a>
+      <a href="./tag/sms.html">sms</a>
+      <a href="./tag/gmail.html">gmail</a>
+      <a href="./tag/freefr.html">Free.fr</a>
+    </p>
+  </div>
+
+  <div class="center social-share">
+    <p>Like this article? Share it with your friends!</p>
+    <div class="addthis_native_toolbox"></div>
+    <div class="addthis_sharing_toolbox"></div>
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline"></div>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle ads-responsive"
+         data-ad-client="ca-pub-9421131783612830"
+         data-ad-slot="7257980762"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'http-yang2lalang-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view comments.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy; 2021  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">Creative Commons Attribution-ShareAlike</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="./theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="True"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bac97e477d3d598" async="async"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Franklin is Blogging ",
+  "url" : ".",
+  "image": "./images/cartoon_ik.png",
+  "description": "Franklin OKOLI's My thoughts and a few tutorials"
+}
+</script>
+
 </body>
 </html>
