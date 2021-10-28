@@ -47,7 +47,7 @@ CC_LICENSE = {
     'slug': 'by-sa'
 }
 
-COPYRIGHT_YEAR = 2018
+COPYRIGHT_YEAR = 2020
 
 DEFAULT_PAGINATION = 10
 OUTPUT_PATH = 'docs/'
@@ -55,11 +55,11 @@ OUTPUT_PATH = 'docs/'
 #
 
 MARKUP = ('md')
-STATIC_PATHS = ['images', 'extra','articles']
-PLUGIN_PATHS = ['./plugins/pelican-plugins']
+STATIC_PATHS = ['images', 'extra','articles','pages']
+PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = './themes/Flex'
+THEME = 'pelican-themes/Flex'
 
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}

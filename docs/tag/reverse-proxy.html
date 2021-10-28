@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://yang2lalang.com/theme/pygments/monokai.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://yang2lalang.com/theme/font-awesome/css/solid.css">
+
+
+    <link href="http://yang2lalang.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Franklin is Blogging Atom">
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-126577907-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+    <meta name="author" content="Franklin OKOLI" />
+    <meta name="description" content="Franklin OKOLI's My thoughts and a few tutorials" />
+<meta property="og:site_name" content="Franklin is Blogging"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Franklin is Blogging"/>
+<meta property="og:description" content="Franklin OKOLI's My thoughts and a few tutorials"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://yang2lalang.com"/>
+<meta property="og:image" content="./images/cartoon_ik.png">
+
+  <title>Franklin is Blogging &ndash; Tag reverse proxy</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-9421131783612830",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="http://yang2lalang.com">
+        <img src="./images/cartoon_ik.png" alt="Franklin OKOLI" title="Franklin OKOLI">
+      </a>
+
+      <h1>
+        <a href="http://yang2lalang.com">Franklin OKOLI</a>
+      </h1>
+
+<p>Robotics Software Engineer, Part time Trader,  Consultant</p>
+
+      <nav>
+        <ul class="list">
+
+
+
+            <li>
+              <a target="_self" href="http://yang2lalang.com" >Home</a>
+            </li>
+            <li>
+              <a target="_self" href="https://www.researchgate.net/profile/Franklin_Okoli" >Researchgate</a>
+            </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-linkedin" href="http://www.linkedin.com/in/franklinokoli/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-github" href="https://github.com/yang2lalang" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-aside"
+           data-ad-client="ca-pub-9421131783612830"
+           data-ad-slot="5340595560"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://yang2lalang.com">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://yang2lalang.com/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="http://yang2lalang.com/using-nginx-reverse-proxy-to-host-multiple-services-on-a-single-public-ip-address-and-port.html#using-nginx-reverse-proxy-to-host-multiple-services-on-a-single-public-ip-address-and-port">Using Nginx Reverse proxy to host multiple services on a single public IP address and port</a></h2>
+    <p>
+      Posted on November 25, 2020 in <a href="http://yang2lalang.com/category/software-developement.html">Software Developement</a>
+
+
+        &#8226; 4 min read
+    </p>
+  </header>
+  <div>
+      <p>I have recently run into a problem where i wanted to test updates to my static <a href="www.yang2lalang.com">website</a>. The website data is stored on <a href="https://github.com/yang2lalang/blog">github</a> and it's domain name provided by <a href="https://domains.google.com/">google</a>. The changes to the website is done on a google compute engine instance using a jupyter notebook running on …</p>
+        <br>
+        <a class="btn"
+           href="http://yang2lalang.com/using-nginx-reverse-proxy-to-host-multiple-services-on-a-single-public-ip-address-and-port.html#using-nginx-reverse-proxy-to-host-multiple-services-on-a-single-public-ip-address-and-port">
+          Continue reading
+        </a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-9421131783612830"
+       data-ad-slot="9584371569"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+
+    <footer>
+<p>
+  &copy; 2020  - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bac97e477d3d598" async="async"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Franklin is Blogging ",
+  "url" : "http://yang2lalang.com",
+  "image": "./images/cartoon_ik.png",
+  "description": "Franklin OKOLI's My thoughts and a few tutorials"
+}
+</script>
+
+
+</body>
+</html>
