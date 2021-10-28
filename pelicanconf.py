@@ -55,7 +55,7 @@ OUTPUT_PATH = 'docs/'
 #
 
 MARKUP = ('md')
-STATIC_PATHS = ['images', 'extra','articles','pages']
+STATIC_PATHS = ['images', 'extra','articles']
 PLUGIN_PATHS = ['./plugins/pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
