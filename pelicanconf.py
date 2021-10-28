@@ -61,11 +61,17 @@ OUTPUT_PATH = 'docs/'
 #
 
 MARKUP = ('md')
-STATIC_PATHS = ['images', 'extra','articles']
+STATIC_PATHS = ['images', 'extra','articles',"extra/CNAME"]
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = './pelican-themes/Flex'
+THEME = 'Flex'
+
+EXTRA_PATH_METADATA = {
+    "extra/CNAME": {"path": "CNAME"},
+}
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+THEME_COLOR_ENABLE_USER_OVERRIDE = True
 
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
