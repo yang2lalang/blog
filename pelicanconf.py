@@ -65,7 +65,7 @@ STATIC_PATHS = ['images', 'extra','articles',"extra/CNAME"]
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'post_stats','i18n_subsites']
 IGNORE_FILES = ['.ipynb_checkpoints']
-THEME = 'Flex'
+THEME = './pelican-themes/Flex'
 
 EXTRA_PATH_METADATA = {
     "extra/CNAME": {"path": "CNAME"},
