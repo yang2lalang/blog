@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'https://yang2lalang.com/'
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 USE_LESS = False
 DELETE_OUTPUT_DIRECTORY = True
 GOOGLE_ANALYTICS = "UA-126577907-1"

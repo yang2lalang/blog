@@ -33,13 +33,20 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
+# Feed Items
+FEED_MAX_ITEMS = 15
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
+
 LINKS = (('Home', 'http://yang2lalang.com'),('Researchgate', 'https://www.researchgate.net/profile/Franklin_Okoli'),)
 
 
 SOCIAL = (('linkedin', 'http://www.linkedin.com/in/franklinokoli/'),
 	  ('github', 'https://github.com/yang2lalang'),
-      ("rss", "/feeds/all.atom.xml"),
+      ("rss", FEED_ALL_ATOM),
       )
+
+
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),

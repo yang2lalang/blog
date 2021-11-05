@@ -128,7 +128,7 @@
             </a>
           </li>
           <li>
-            <a  class="sc-rss" href="/feeds/all.atom.xml" target="_blank">
+            <a  class="sc-rss" href="feeds/all.atom.xml" target="_blank">
               <i class="fas fa-rss"></i>
             </a>
           </li>
@@ -163,21 +163,233 @@
     <p>
       Posted on October 28, 2021 in <a href="./category/infrastructure.html">Infrastructure</a>
 
-        &#8226; 1 min read
+        &#8226; 6 min read
     </p>
   </header>
 
 
   <div>
     <p>This post shows how to create an live running Apache webserver on <a href="https://aws.amazon.com">AWS</a> using <a href="https://terraform.io">terraform</a>. The advantage of this method is to be able to use a repeatable method to spin up infrastructure for software deployment as the business grows. It also creates a clear, detailed  and easily transferrable information about the deployment architecture and the infrastructure in use at each point in time for any interested developer in the organization.</p>
-<h1><strong>Setup the alert first!</strong></h1>
-<h2>Insert indicator on chart</h2>
-<p>Lets say we went to be alert on a MA cross between the 5-period moving average and the 55-period exponential moving average on the 1hr EUR-USD chart. First we set-up our chart in trading view by including all the required indicators as shown below:</p>
-<p><img alt="Insert indicator on chart" class="img-center" src="./images/eurusdIndicators.png"></p>
-<h2>Create the alerts based on the indicator</h2>
-<p>Choose the alert condition, in the image below we have chosen to be alerted when ever there is cross between the MA-5 and the EMA-55 on the 1hr EUR-USD chart. We set </p>
+<h2>Setup AWS credentials</h2>
+<p>Please follow this <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html">link</a> to set AWS credentials and access keys. A json file is provided at the end, download this file to a path called to a path called <strong>TF_DATA_DIR</strong> as <strong>/TF_DATA_DIR/key.json</strong> on your computer and put this directory in the system enviroment variables. .</p>
+<h2>Create terraform file and load AWS credentials</h2>
+<p>Create a file called <strong>main.tf</strong> in your favorite text editor, and save it to a path on your computer. This file contains all terraform commands and is to be wrriten in Hashicorp's language format. The first step is to load the AWS credentials created in the previous step. This path must be in directory different from  <strong>TF_DATA_DIR</strong> which could contain sensitive credentials that we dont want to expose for example with a <code>git push</code></p>
+<div class="highlight"><pre><span></span><code>locals {
+  json_data = jsondecode(file(&quot;<span class="cp">${</span><span class="n">TF_DATA_DIR</span><span class="cp">}</span>/key.json&quot;))
+}
+</code></pre></div>
+
+<p>Terraform provides a <a href="https://www.terraform.io/docs/language/functions/jsondecode.html">jsondecode</a> function that is useful for loading json files to the variable local, which can then me accessed during execution.</p>
+<h1>Create a provider</h1>
+<p>The next step is to declare <a href="aws.amazon.com">AWS</a> as the provider. The AWS credentials provided below will be used for authentication when accessing the aws api to create the needed remote resources.</p>
+<div class="highlight"><pre><span></span><code><span class="n">provider</span> <span class="s">&quot;aws&quot;</span> <span class="p">{</span>
+  <span class="n">region</span> <span class="o">=</span> <span class="s">&quot;us-east-1&quot;</span>
+  <span class="n">access_key</span> <span class="o">=</span> <span class="n">local</span><span class="p">.</span><span class="n">json_data</span><span class="p">.</span><span class="n">aws_key</span>
+  <span class="n">secret_key</span> <span class="o">=</span> <span class="n">local</span><span class="p">.</span><span class="n">json_data</span><span class="p">.</span><span class="n">aws_secret</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h1>Create a VPC</h1>
+<p>Here we create a virtual private cloud, a sort of virtual network that is private though sitting on the cloud, it helps us to define a range of static ip addresses that we can assign to remote resources.</p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_vpc&quot; &quot;office_network&quot; {
+  cidr_block = &quot;10.0.1.0/28&quot;
+  tags = {
+    Name = &quot;OfficeNetwork&quot;
+  }
+}
+</code></pre></div>
+
+<h1>Create an Internet gateway</h1>
+<p>We create an Internet gateway to reserve a public ip address that we can use to send and recieve traffic to the internet. This is attached to the previously created VPC.</p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_internet_gateway&quot; &quot;company_public_gateway&quot; {
+  vpc_id = aws_vpc.office_network.id
+  tags = {
+    Name = &quot;CompanyPublicGateway&quot;
+  }
+}
+</code></pre></div>
+
+<h1>Create a custom route table</h1>
+<p>Each VPC must have a route table attached to it to define where hosts send ip packets (routing). There is a default main route table but we can choose to explicitly define a route table as we wish and add routes. <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Each subnet in the VPC must be associated to a single route table</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">resource</span> <span class="s2">&quot;</span><span class="s">aws_route_table</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="s">company_route_table</span><span class="s2">&quot;</span> {
+  <span class="nv">vpc_id</span> <span class="o">=</span> <span class="nv">aws_vpc</span>.<span class="nv">office_network</span>.<span class="nv">id</span>   
+      #<span class="k">send</span> <span class="nv">all</span> <span class="nv">traffic</span> <span class="nv">from</span> <span class="nv">this</span> <span class="nv">subnet</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">internet</span> <span class="nv">gateway</span>
+  <span class="nv">route</span>  {
+      <span class="nv">cidr_block</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">10.0.1.0/24</span><span class="s2">&quot;</span>
+      <span class="nv">gateway_id</span> <span class="o">=</span> <span class="nv">aws_internet_gateway</span>.<span class="nv">company_public_gateway</span>.<span class="nv">id</span>
+    }
+      #<span class="k">send</span> <span class="nv">all</span> <span class="nv">IPV6</span> <span class="nv">traffic</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">internet</span> <span class="nv">gateway</span>
+  <span class="nv">route</span> {
+      <span class="nv">ipv6_cidr_block</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="s">::/0</span><span class="s2">&quot;</span>
+      <span class="nv">gateway_id</span> <span class="o">=</span> <span class="nv">aws_internet_gateway</span>.<span class="nv">company_public_gateway</span>.<span class="nv">id</span>
+    }
+  <span class="nv">tags</span> <span class="o">=</span> {
+    <span class="nv">Name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">CompanyRouteTable</span><span class="s2">&quot;</span>
+  }
+}
+</code></pre></div>
+
+<h1>Create a subnet</h1>
+<p>Next is to create a subnet within which the host running the apache server will sit, this assumes a private network that isolates server traffic that can be internet facing and other devices local to the network, a good practice for security reasons :) We indicate the availability zone when this option exists to make sure all devices are deployed in the same availability zone. We need to have all devices to be deployed in the same availability zone.</p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_subnet&quot; &quot;office_subnet_pcs&quot; {
+  vpc_id     = aws_vpc.office_network.id
+  cidr_block = &quot;10.0.1.0/28&quot;
+  availability_zone = &quot;us-east-1a&quot; 
+  tags = {
+    Name = &quot;OfficeSubNetPCS&quot;
+  }
+}
+</code></pre></div>
+
+<h1>Associate subnet with route table</h1>
+<p>Here we associate the newly created subnet with the previously created route table. we refrence directly the <strong>subnet.id</strong> and <strong>route_table.id</strong> respectively.</p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_route_table_association&quot; &quot;officesubnet_routetable_association&quot; {
+  subnet_id      = aws_subnet.office_subnet_pcs.id
+  route_table_id = aws_route_table.company_route_table.id
+}
+</code></pre></div>
+
+<h1>Create security group and allow only ports 22, 443, 80</h1>
+<p>The next syntax is to create an AWS security group to allow specific ports to communicate with hosts on the internet. This security group applies to all hosts on our VPC and allows them to communicate with any host on the internet. Note that we can allow only a specific list of specific ipv4 addresses in the <strong>cidr_blocks</strong> or ipv6 addresses  in the <strong>ipv6_cidr_blocks</strong> for more security.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">resource</span> <span class="s2">&quot;</span><span class="s">aws_security_group</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="s">allow_web_traffic</span><span class="s2">&quot;</span> {
+  <span class="nv">name</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="s">allow_web_traffic</span><span class="s2">&quot;</span>
+  <span class="nv">description</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Allow web traffic for ssh http and tls</span><span class="s2">&quot;</span>
+  <span class="nv">vpc_id</span>      <span class="o">=</span> <span class="nv">aws_vpc</span>.<span class="nv">office_network</span>.<span class="nv">id</span>
+
+  #<span class="nv">specifies</span> <span class="nv">a</span> <span class="nv">range</span> <span class="nv">of</span> <span class="nv">ports</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">allowed</span> <span class="nv">and</span> <span class="nv">in</span> <span class="nv">this</span> <span class="nv">case</span> <span class="nv">Tcp</span> <span class="mi">443</span>:<span class="mi">447</span>
+  # <span class="nv">allows</span> <span class="nv">all</span> <span class="nv">ip</span> <span class="nv">addresses</span> <span class="nv">to</span> <span class="nv">access</span> <span class="nv">into</span> <span class="nv">this</span> <span class="nv">port</span> <span class="nv">since</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">a</span> <span class="nv">web</span> <span class="nv">server</span>
+  # <span class="nv">any</span> <span class="nv">internet</span> <span class="nv">address</span> <span class="nv">can</span> <span class="nv">access</span> <span class="nv">into</span> <span class="nv">this</span> <span class="nv">port</span>
+
+  <span class="nv">ingress</span> <span class="o">=</span> [
+    {
+      <span class="nv">description</span>      <span class="o">=</span> <span class="s2">&quot;</span><span class="s">HTTPS Traffic</span><span class="s2">&quot;</span>
+      <span class="nv">from_port</span>        <span class="o">=</span> <span class="mi">443</span>
+      <span class="nv">to_port</span>          <span class="o">=</span> <span class="mi">443</span>
+      <span class="nv">protocol</span>         <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tcp</span><span class="s2">&quot;</span>
+      <span class="nv">cidr_blocks</span>      <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">0.0.0.0/0</span><span class="s2">&quot;</span>]
+      <span class="nv">ipv6_cidr_blocks</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">::/0</span><span class="s2">&quot;</span>]
+      <span class="nv">prefix_list_ids</span> <span class="o">=</span> []
+      <span class="nv">security_groups</span> <span class="o">=</span> []
+      <span class="nv">self</span> <span class="o">=</span> <span class="nv">false</span>
+    },
+    {
+      <span class="nv">description</span>      <span class="o">=</span> <span class="s2">&quot;</span><span class="s">HTTP Traffic</span><span class="s2">&quot;</span>
+      <span class="nv">from_port</span>        <span class="o">=</span> <span class="mi">80</span>
+      <span class="nv">to_port</span>          <span class="o">=</span> <span class="mi">80</span>
+      <span class="nv">protocol</span>         <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tcp</span><span class="s2">&quot;</span>
+      <span class="nv">cidr_blocks</span>      <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">0.0.0.0/0</span><span class="s2">&quot;</span>]
+      <span class="nv">ipv6_cidr_blocks</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">::/0</span><span class="s2">&quot;</span>]
+      <span class="nv">prefix_list_ids</span> <span class="o">=</span> []
+      <span class="nv">security_groups</span> <span class="o">=</span> []
+      <span class="nv">self</span> <span class="o">=</span> <span class="nv">false</span>
+    },
+    {
+      <span class="nv">description</span>      <span class="o">=</span> <span class="s2">&quot;</span><span class="s">SSH Traffic</span><span class="s2">&quot;</span>
+      <span class="nv">from_port</span>        <span class="o">=</span> <span class="mi">22</span>
+      <span class="nv">to_port</span>          <span class="o">=</span> <span class="mi">22</span>
+      <span class="nv">protocol</span>         <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tcp</span><span class="s2">&quot;</span>
+      <span class="nv">cidr_blocks</span>      <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">0.0.0.0/0</span><span class="s2">&quot;</span>]
+      <span class="nv">ipv6_cidr_blocks</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">::/0</span><span class="s2">&quot;</span>]
+      <span class="nv">prefix_list_ids</span> <span class="o">=</span> []
+      <span class="nv">security_groups</span> <span class="o">=</span> []
+      <span class="nv">self</span> <span class="o">=</span> <span class="nv">false</span>
+    }
+  ]
+
+  #<span class="nv">allow</span> <span class="nv">all</span> <span class="nv">ports</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">egress</span> <span class="nv">direction</span> <span class="k">for</span> <span class="nv">any</span> <span class="nv">protocol</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="nv">egress</span> <span class="o">=</span> [
+    {
+     <span class="nv">description</span>      <span class="o">=</span> <span class="s2">&quot;</span><span class="s">for all outgoing traffics</span><span class="s2">&quot;</span>
+      <span class="nv">from_port</span>        <span class="o">=</span> <span class="mi">0</span>
+      <span class="nv">to_port</span>          <span class="o">=</span> <span class="mi">0</span>
+      <span class="nv">protocol</span>         <span class="o">=</span> <span class="s2">&quot;</span><span class="s">-1</span><span class="s2">&quot;</span>
+      <span class="nv">cidr_blocks</span>      <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">0.0.0.0/0</span><span class="s2">&quot;</span>]
+      <span class="nv">ipv6_cidr_blocks</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">::/0</span><span class="s2">&quot;</span>]
+      <span class="nv">prefix_list_ids</span> <span class="o">=</span> []
+      <span class="nv">security_groups</span> <span class="o">=</span> []
+      <span class="nv">self</span> <span class="o">=</span> <span class="nv">false</span>
+    }
+  ]
+
+  <span class="nv">tags</span> <span class="o">=</span> {
+    <span class="nv">Name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Allow_Web-HTTPS_HTTP_SSH</span><span class="s2">&quot;</span>
+  }
+}
+</code></pre></div>
+
+<h1>Create a Network Interface</h1>
+<p>We create a network interface for a one of the local ipv4 addresses in the subnet. This interface will be used to the host that will run the apache server and contains the security group previously created that allows traffic to reach it. </p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_network_interface&quot; &quot;office_webserver_nic&quot; {
+  subnet_id       = aws_subnet.office_subnet_pcs.id
+  private_ips     = [&quot;10.0.1.11&quot;]
+  security_groups = [aws_security_group.allow_web_traffic.id]
+}
+</code></pre></div>
+
+<h1>Assign an elastic ip to the network interface</h1>
+<p>We will assign an <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html.office_webserver_nic.id">Amazon elastic ip</a>to the previously created network interface. Th Eip relies on the previously created internet gateway and must be assigned on a device in a subnet or vpc that has an internet gateway.</p>
+<div class="highlight"><pre><span></span><code>resource &quot;aws_eip&quot; &quot;webserver_nic_elastic_ip&quot; {
+  vpc                       = true
+  network_interface         = 
+  associate_with_private_ip = &quot;10.0.1.11&quot;
+  depends_on = [aws_internet_gateway.company_public_gateway]
+}
+</code></pre></div>
+
+<h1>Create an ubuntu server on an aws instance and install enable apache on this server</h1>
+<p>This step relies on <a href="https://cloud-images.ubuntu.com/locator/ec2/">pre-built Ubuntu images</a> on AWS called <strong>AMI</strong>. You can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">choose another AMI from AWS</a> on which to deploy your apache server, you should also choose an instance-type to act as the host. The <strong>instance-type</strong> will differ in the properties such as CPU, memory, GPU etc. As a general rule the more powerful the instance the more expensive your installation. A very important step here is the creation of a key that is used to access the instance by terraform. <strong>"rootkey"</strong> is a <strong>.ppk</strong> file that is created on AWS using this <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair">method</a>. Save this file somewhere in  the same path set in the enviromental variable <strong>TF_DATA_DIR</strong> with name <strong>rootkey.ppk</strong>. The rest of the code is used to initialize the Ubuntu OS, install apache and use <strong>Systemctl</strong> to start the apache service.</p>
+<div class="highlight"><pre><span></span><code><span class="n">resource</span> <span class="s2">&quot;aws_instance&quot;</span> <span class="s2">&quot;web_server_1&quot;</span> <span class="p">{</span>
+  <span class="n">ami</span>           <span class="o">=</span> <span class="s2">&quot;ami-0747bdcabd34c712a&quot;</span>
+  <span class="n">instance_type</span> <span class="o">=</span> <span class="s2">&quot;t2.micro&quot;</span>
+  <span class="n">availability_zone</span> <span class="o">=</span> <span class="s2">&quot;us-east-1a&quot;</span> 
+  <span class="n">key_name</span> <span class="o">=</span> <span class="s2">&quot;rootkey&quot;</span>
+  <span class="n">network_interface</span> <span class="p">{</span>
+    <span class="n">device_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">network_interface_id</span> <span class="o">=</span> <span class="n">aws_network_interface</span><span class="o">.</span><span class="n">office_webserver_nic</span><span class="o">.</span><span class="n">id</span>
+  <span class="p">}</span>
+  <span class="c1">#Tell terraform on the deployment of this server to run commands to install Apache on this server</span>
+  <span class="c1">#Update ubuntu OS</span>
+  <span class="c1">#Install apache</span>
+  <span class="c1">#Start apache service</span>
+  <span class="c1">#You can install other packages here by command line</span>
+  <span class="c1">#end with EOF</span>
+  <span class="n">user_data</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="n">EOF</span>
+              <span class="c1">#!/bin/bash</span>
+              <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">-</span><span class="n">y</span>
+              <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">apache2</span> <span class="o">-</span><span class="n">y</span>
+              <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">start</span> <span class="n">apache2</span>
+              <span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo This is a web server &gt; /var/www/html/index.html&#39;</span>
+              <span class="n">EOF</span>
+
+  <span class="n">tags</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Webserver1&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h1>Run everything</h1>
+<p>We use init to start execution and get provider (in this case AWS) api plugins.</p>
+<div class="highlight"><pre><span></span><code>terraform init
+</code></pre></div>
+
+<p>We can get current state of resources with a plan command or to see what a change in the infrastructure could look like before making changes permanent.</p>
+<div class="highlight"><pre><span></span><code>terraform plan
+</code></pre></div>
+
+<p>To make apply changes to resources permanent.</p>
+<div class="highlight"><pre><span></span><code>terraform apply
+</code></pre></div>
+
+<p>Last but not least we can  destroy resources if we do not want to leave the infrastructure running forever to save cost. <strong>Be careful with this command, it could delete all instances in your infrastructure and you should use it at the end of this tutorial to save costs if you do not want to incure running costs.</strong> </p>
+<div class="highlight"><pre><span></span><code>terraform destroy
+</code></pre></div>
+
 <h1>Conclusion</h1>
-<p>Now the label just tags all emails we recieve from Tradingview and forwards them to our phone by MMS. A list of message gateways for some mobile phone carriers can be found <a href="https://kb.sandisk.com/app/answers/detail/a_id/17056/~/list-of-mobile-carrier-gateway-addresses">here</a> at the time of this writing. Please note that the forward address has to be verified to become activated by typing the code recieved from gmail to your mobile phone via MMS. In the next article, we show a special case where we can read and forward our emails by SMS using google scripts.</p>
+<p>We have seen how we can use Terraform to create infrastructure on AWS using a <a href="https://www.terraform.io/docs/language/index.html">declerative syntax</a>. This makes infrastructure creation, management and replacement easy, fun and painless. The code used is available on <a href="https://github.com/yang2lalang/terraform_examples">github.</a></p>
+<p>References:</p>
+<p><a href="https://learn.hashicorp.com/tutorials/terraform/aws-build">Terraform</a>
+<a href="aws.amazon.com">AWS</a>
+<a href="https://youtu.be/SLB_c_ayRMo">FreeCodeCamp.org</a></p>
   </div>
   <div class="tag-cloud">
     <p>
